@@ -3,7 +3,16 @@
 import PysimpleGUI as sg
 #paligmainigie, kuri uzglaba ievades datus
 # iekseja funkc kas veic aprekinus
-def calculate(num1,num2,opperation)
+def calculate(num1,num2,opperation):
+   try: # TAS KO NOLASA NO TEkstA LAUkA IR TEksts
+      num1=float(num1)
+      num2=float(num2)
+      if opperation =="+":
+         rezultats= num1+num2
+      elif opperation =="-":
+         rezultats= num1-num2
+   except ValueError: #paredz ka pie kadas darb var rasties kluuda
+      return "kĻūda"
 current_input=""
 current_opperation=""
 layout=[
@@ -48,6 +57,6 @@ while True:
     elif event == "=":
        rezultats= calculate(current_input,values[0], current_opperation)# kalkulate= funkcija (kurai 3 vertibas)(1. kuru ievadam, 2 masivais/ nultais elements, 3 operatorss ar ko stradasim)
        window["-DISPLAY-"].update(current_input)
-       current_input=str(rezultats)# ko tas dos? 1.tas ko mes rekinam tas ir skaitli, japarveido uz int.
+       current_input=int(rezultats)# ko tas dos? 1.tas ko mes rekinam tas ir skaitli, japarveido uz int.
     
     window.close()
