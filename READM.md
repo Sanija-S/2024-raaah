@@ -1,0 +1,2 @@
+Pysimple GUI
+merkis- kalkulators

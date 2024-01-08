@@ -1,0 +1,1 @@
+# ka nolasa faila daus csv json utt
